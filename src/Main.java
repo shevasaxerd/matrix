@@ -1,28 +1,30 @@
+import Models.Matrix;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int a, b, c, d, x, y;
+        int quantityOfRows, quantityOfColumns, rangeOfValues;
 
         Scanner console = new Scanner(System.in);
         System.out.println("Remember, to multiply two matrices, the number of columns of the first matrix must match the number of rows of the second matrix.");
         System.out.println("Enter the size of the first matrix:");
-        a = console.nextInt();
-        b = console.nextInt();
+        quantityOfRows = console.nextInt();
+        quantityOfColumns = console.nextInt();
         System.out.println("Enter a range of values of first matrix:");
-        x = console.nextInt();
+        rangeOfValues = console.nextInt();
 
-        Matrix firstMatrix = new Matrix(a, b, x);
+        Matrix firstMatrix = new Matrix(quantityOfRows, quantityOfColumns, rangeOfValues);
         firstMatrix.Filling();
 
         System.out.println("Enter the size of the second matrix:");
-        c = console.nextInt();
-        d = console.nextInt();
+        quantityOfRows = console.nextInt();
+        quantityOfColumns = console.nextInt();
         System.out.println("Enter a range of values of second matrix:");
-        y = console.nextInt();
+        rangeOfValues = console.nextInt();
 
-        Matrix secondMatrix = new Matrix(c, d, y);
+        Matrix secondMatrix = new Matrix(quantityOfRows, quantityOfColumns, rangeOfValues);
         secondMatrix.Filling();
 
         firstMatrix.Print();
