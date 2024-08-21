@@ -1,3 +1,4 @@
+import Models.MathService;
 import Models.Matrix;
 
 import java.util.Scanner;
@@ -16,7 +17,7 @@ public class Main {
         rangeOfValues = console.nextInt();
 
         Matrix firstMatrix = new Matrix(quantityOfRows, quantityOfColumns, rangeOfValues);
-        firstMatrix.Filling();
+        MathService.filling(firstMatrix);
 
         System.out.println("Enter the size of the second matrix:");
         quantityOfRows = console.nextInt();
@@ -25,12 +26,13 @@ public class Main {
         rangeOfValues = console.nextInt();
 
         Matrix secondMatrix = new Matrix(quantityOfRows, quantityOfColumns, rangeOfValues);
-        secondMatrix.Filling();
+        MathService.filling(secondMatrix);
 
-        firstMatrix.Print();
-        secondMatrix.Print();
+        MathService.print(firstMatrix);
+        MathService.print(secondMatrix);
 
-        firstMatrix.multiply(secondMatrix);
+        MathService.multiply(firstMatrix, secondMatrix);
+
     }
 }
 
