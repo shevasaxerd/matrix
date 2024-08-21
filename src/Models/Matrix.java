@@ -25,6 +25,7 @@ public class Matrix {
     }
 
     public void Print(){
+        System.out.println("Matrix:" );
         for (int i = 0; i < rows; i++) {
             System.out.println(Arrays.toString(matrix[i]));
         }
