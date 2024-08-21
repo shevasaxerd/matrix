@@ -1,8 +1,7 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
-
 public class Main {
+
     public static void main(String[] args) {
         int a, b, c, d, x, y;
 
@@ -15,6 +14,7 @@ public class Main {
         x = console.nextInt();
 
         Matrix firstMatrix = new Matrix(a, b, x);
+        firstMatrix.Filling();
 
         System.out.println("Enter the size of the second matrix:");
         c = console.nextInt();
@@ -23,10 +23,12 @@ public class Main {
         y = console.nextInt();
 
         Matrix secondMatrix = new Matrix(c, d, y);
+        secondMatrix.Filling();
 
         firstMatrix.Print();
         secondMatrix.Print();
 
+        firstMatrix.multiply(secondMatrix);
     }
 }
 
