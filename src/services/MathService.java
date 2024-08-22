@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class MathService {
 
-    public static void filling(Matrix matrix){
+    public void filling(Matrix matrix){
         for (int i = 0; i < matrix.getRows(); i++) {
             for (int j = 0; j < matrix.getColumns(); j++) {
                 matrix.getMatrix()[i][j] = (int) (Math.random() * (matrix.getRange()+1));
@@ -14,13 +14,13 @@ public class MathService {
         }
     }
 
-    public static void print(Matrix matrix){
+    public void print(Matrix matrix){
         System.out.println("Matrix:" );
         for (int i = 0; i < matrix.getRows(); i++) {
             System.out.println(Arrays.toString(matrix.getMatrix()[i]));
         }
     }
-    public static void multiply(Matrix matrix1, Matrix matrix2){
+    public void multiply(Matrix matrix1, Matrix matrix2){
         if (matrix2.getRows() == matrix1.getColumns()) {
             int[][] result = new int[matrix1.getRows()][matrix2.getColumns()];
             for (int i = 0; i < matrix1.getRows(); i++) {
