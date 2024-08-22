@@ -1,4 +1,6 @@
-package Models;
+package services;
+
+import models.Matrix;
 
 import java.util.Arrays;
 

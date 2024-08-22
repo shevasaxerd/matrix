@@ -1,5 +1,5 @@
-import Models.MathService;
-import Models.Matrix;
+import services.MathService;
+import models.Matrix;
 
 import java.util.Scanner;
 

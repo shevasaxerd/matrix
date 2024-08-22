@@ -1,6 +1,4 @@
-package Models;
-
-import java.util.Arrays;
+package models;
 
 public class Matrix {
 
