@@ -2,6 +2,7 @@ package services;
 
 import models.Matrix;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainService {
@@ -21,20 +22,52 @@ public class MainService {
 
             Scanner console = new Scanner(System.in);
             System.out.println("Remember, to multiply two matrices, the number of columns of the first matrix must match the number of rows of the second matrix.");
-            System.out.println("Enter the size of the first matrix:");
-            quantityOfRows = console.nextInt();
-            quantityOfColumns = console.nextInt();
-            System.out.println("Enter a range of values of first matrix:");
-            rangeOfValues = console.nextInt();
+
+            while (true) {
+                try {
+                    Scanner console1 = new Scanner(System.in);
+                    System.out.println("Enter the size of the first matrix:");
+                    quantityOfRows = console1.nextInt();
+                    quantityOfColumns = console1.nextInt();
+                } catch (InputMismatchException ex) {
+                    System.out.println("WARNING! Please try again with a valid value (enter an integer).");
+                    continue;
+
+                }
+                break; }
+
+           while (true) {
+            try {
+                Scanner console2 = new Scanner(System.in);
+                System.out.println("Enter a range of values of first matrix:");
+            rangeOfValues = console2.nextInt(); } catch (InputMismatchException ex) {
+               System.out.println("WARNING! Please try again with a valid value (enter an integer).");
+                continue;
+           }
+            break;}
 
             Matrix firstMatrix = new Matrix(quantityOfRows, quantityOfColumns, rangeOfValues);
             mathService.filling(firstMatrix);
 
-            System.out.println("Enter the size of the second matrix:");
-            quantityOfRows = console.nextInt();
-            quantityOfColumns = console.nextInt();
-            System.out.println("Enter a range of values of second matrix:");
-            rangeOfValues = console.nextInt();
+            while (true) {
+            try {
+                Scanner console3 = new Scanner(System.in);
+                System.out.println("Enter the size of the second matrix:");
+            quantityOfRows = console3.nextInt();
+            quantityOfColumns = console3.nextInt(); } catch (InputMismatchException ex) {
+                System.out.println("WARNING! Please try again with a valid value (enter an integer).");
+                continue;
+            }
+            break; }
+
+            while (true) {
+                Scanner console4 = new Scanner(System.in);
+             try { System.out.println("Enter a range of values of second matrix:");
+            rangeOfValues = console4.nextInt(); } catch (InputMismatchException ex) {
+                 System.out.println("WARNING! Please try again with a valid value (enter an integer).");
+                 continue;
+             }
+            break;}
 
             Matrix secondMatrix = new Matrix(quantityOfRows, quantityOfColumns, rangeOfValues);
             mathService.filling(secondMatrix);
