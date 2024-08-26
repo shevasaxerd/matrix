@@ -14,6 +14,8 @@ public class Matrix {
         this.matrix  = new int[rows][columns];
     }
 
+    public Matrix () {}
+
     public int getRows(){ return rows;}
     public void setRows(int rows){ this.rows = rows;}
     public int getColumns(){ return columns;}
