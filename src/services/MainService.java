@@ -20,7 +20,6 @@ public class MainService {
         while(exitСriterion == 2) {
             int quantityOfRows, quantityOfColumns, rangeOfValues;
 
-            Scanner console = new Scanner(System.in);
             System.out.println("Remember, to multiply two matrices, the number of columns of the first matrix must match the number of rows of the second matrix.");
 
             while (true) {
@@ -33,7 +32,9 @@ public class MainService {
                     System.out.println("WARNING! Please try again with a valid value (enter an integer).");
                     continue;
 
-                }
+                } if (quantityOfRows <= 0 || quantityOfColumns <= 0) {
+                    System.out.println("WARNING! The matrix size cannot be less than 1x1!");
+                    continue; }
                 break; }
 
            while (true) {
@@ -57,7 +58,9 @@ public class MainService {
             quantityOfColumns = console3.nextInt(); } catch (InputMismatchException ex) {
                 System.out.println("WARNING! Please try again with a valid value (enter an integer).");
                 continue;
-            }
+            } if (quantityOfRows <= 0 || quantityOfColumns <= 0) {
+                    System.out.println("WARNING! The matrix size cannot be less than 1x1!");
+                    continue; }
             break; }
 
             while (true) {
@@ -77,8 +80,18 @@ public class MainService {
 
             mathService.multiply(firstMatrix, secondMatrix);
 
+            while (true) {
+            Scanner console = new Scanner(System.in);
+            try {
             System.out.println("Do you want exit(1) or continue(2)?");
-            exitСriterion = console.nextInt();
+            exitСriterion = console.nextInt(); } catch (InputMismatchException ex) {
+                System.out.println("WARNING! Please enter 1 or 2.");
+                continue;
+            } if (exitСriterion!= 1 && exitСriterion != 2) {
+                    System.out.println("WARNING! Please enter 1 or 2.");
+                    continue;
+                }
+            break; }
 
         }
     }
