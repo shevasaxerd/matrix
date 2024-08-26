@@ -11,7 +11,7 @@ public class MainService {
 
     public MainService(){}
     public MainService(MathService mathService){
-        this.mathService=mathService;
+        this.mathService = mathService;
     }
 
 

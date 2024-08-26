@@ -1,13 +1,10 @@
-import services.MathService;
+import services.MathServiceImpl;
 import services.MainService;
-import models.Matrix;
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        MathService mathService = new MathService();
-        MainService mainService = new MainService(mathService);
+        MathServiceImpl mathServiceImpl = new MathServiceImpl();
+        MainService mainService = new MainService(mathServiceImpl);
 
         mainService.start();
     }
